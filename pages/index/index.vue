@@ -1,24 +1,23 @@
 <template>
 	<view class='index'>
     
-    <view class="wx-nav">
-      百年 奥特莱斯
-    </view>
-			
-		<view class='f-active-color'> 文字  </view>
-		
-		<view class='iconfont icon-xiaoxi'>  出来了吗?  </view>
+    <IndexSwiper></IndexSwiper>
 		
 	</view>
 </template>
 
+
 <script>
+  import IndexSwiper from '@/components/index/IndexSwiper.vue'
 	export default {
 		data() {
 			return {
 			
 			}
 		},
+    components:{
+      IndexSwiper
+    },
 		onLoad() {
 
 		},
