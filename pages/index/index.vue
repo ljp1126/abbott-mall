@@ -1,13 +1,9 @@
-<!--
- * @Description: 
- * @Author: lijiapeng
- * @Date: 2022-05-23 22:49:58
- * @LastEditTime: 2022-05-30 21:29:07
- * @LastEditors: lijiapeng
- * @Reference: 
--->
 <template>
 	<view class='index'>
+    
+    <view class="wx-nav">
+      百年 奥特莱斯
+    </view>
 			
 		<view class='f-active-color'> 文字  </view>
 		
@@ -38,8 +34,8 @@
 	height: 200rpx;
 	width:100%;
 	line-height: 200rpx;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
+	/* display: flex; */
+	/* justify-content: space-between; */
+	/* align-items: center; */
 }
 </style>
