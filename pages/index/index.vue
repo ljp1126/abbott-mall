@@ -13,6 +13,10 @@
     <Card cardTitle="猜你喜欢"></Card>
     <CommodityList></CommodityList>
     
+    <Card cardTitle='热销爆品'></Card>
+    		
+    <Hot></Hot>
+    
     <Banner></Banner>
     <Icons></Icons>
 	</view>
@@ -26,6 +30,7 @@
   import CommodityList from '@/components/common/CommodityList.vue'
   import Banner from '@/components/index/Banner.vue'
   import Icons from '@/components/index/Icons.vue'
+  import Hot from '@/components/index/Hot.vue'
 	export default {
 		data() {
 			return {
@@ -38,7 +43,8 @@
       Card,
       CommodityList,
       Banner,
-      Icons
+      Icons,
+      Hot
     },
 		onLoad() {
 
