@@ -2,7 +2,7 @@
  * @Description: 
  * @Author: lijiapeng
  * @Date: 2022-05-30 21:31:48
- * @LastEditTime: 2022-07-02 18:09:08
+ * @LastEditTime: 2022-07-02 18:30:06
  * @LastEditors: lijiapeng
  * @Reference: 
 -->
@@ -20,6 +20,8 @@
     <Card cardTitle='推荐店铺'></Card>
 
     <Shop></Shop>
+
+    <Card cardTitle='为你推荐'></Card>
     
     <Banner></Banner>
     <Icons></Icons>
