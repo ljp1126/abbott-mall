@@ -1,5 +1,13 @@
+<!--
+ * @Description: 
+ * @Author: lijiapeng
+ * @Date: 2022-06-12 13:54:40
+ * @LastEditTime: 2022-07-02 18:17:05
+ * @LastEditors: lijiapeng
+ * @Reference: 
+-->
 <template>
-	<view class='commodity'>
+	<view class='commodity' :style="'flex-wrap:' +wrap+';'">
 		<!-- 单个商品组件 -->
 		
 		<view class='commodity-item' 
@@ -15,7 +23,7 @@
 			></image>
 			
 			<view class='commodity-content'>
-				<text class='commodity-name'>{{item.name}}</text>
+				<text class='commodity-name' :style="'font-size:'+nameSize+';'">{{item.name}}</text>
 				<view>
 					<text class='pprice'>¥{{item.pprice}}</text>
 					<text class='oprice'>¥{{item.oprice}}</text>
@@ -30,14 +38,27 @@
 <script>
 export default {
 	props:{
+		// 数据
 		dataList:Array,
+		//宽度
 		itemW:{
 			type:String,
 			default:"375rpx"
 		},
+		//高度
 		bigH:{
 			type:String,
 			default:"375rpx"
+		},
+		//是否换行
+		wrap:{
+			type:String,
+			default:"wrap"
+		},
+		//商品文字大小
+		nameSize:{
+			type:String,
+			default:"26rpx"
 		}
 	}
 }
@@ -46,7 +67,6 @@ export default {
 <style scoped>
 .commodity{
 	display: flex;
-	flex-wrap: wrap;
 }
 .commodity-item{
 	padding-bottom:20rpx;

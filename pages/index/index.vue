@@ -2,7 +2,7 @@
  * @Description: 
  * @Author: lijiapeng
  * @Date: 2022-05-30 21:31:48
- * @LastEditTime: 2022-06-12 10:52:35
+ * @LastEditTime: 2022-07-02 18:09:08
  * @LastEditors: lijiapeng
  * @Reference: 
 -->
@@ -16,6 +16,10 @@
     <Card cardTitle='热销爆品'></Card>
     		
     <Hot></Hot>
+
+    <Card cardTitle='推荐店铺'></Card>
+
+    <Shop></Shop>
     
     <Banner></Banner>
     <Icons></Icons>
@@ -31,6 +35,7 @@
   import Banner from '@/components/index/Banner.vue'
   import Icons from '@/components/index/Icons.vue'
   import Hot from '@/components/index/Hot.vue'
+  import Shop from '@/components/index/Shop.vue'
 	export default {
 		data() {
 			return {
@@ -44,7 +49,8 @@
       CommodityList,
       Banner,
       Icons,
-      Hot
+      Hot,
+      Shop
     },
 		onLoad() {
 
