@@ -2,7 +2,7 @@
  * @Description: 
  * @Author: lijiapeng
  * @Date: 2022-05-30 21:31:48
- * @LastEditTime: 2022-07-24 16:16:24
+ * @LastEditTime: 2022-07-24 16:46:36
  * @LastEditors: lijiapeng
  * @Reference: 
 -->
@@ -16,17 +16,25 @@
 				:key='index'
 				@tap='changeTab(index)'
 			>
-				<text :class='topBarIndex===index? "f-active-color":"f-color"'>{{item.name}}</text>
+				<text :class='topBarIndex===index? " f-active-color" : "f-color"'>{{item.name}}</text>
 			</view>
 		</scroll-view>
-		
 		
 		<swiper  @change='onChangeTab' :current="topBarIndex">
 			<swiper-item 
 				v-for='(item,index) in topBar'
 				:key='index'
 			>
-				<view>{{item.name}}</view>
+				<view class='home-data'>
+          <Banner></Banner>
+					<Icons></Icons>
+					<Card cardTitle='热销爆品'></Card>
+					<Hot></Hot>
+					<Card cardTitle='推荐店铺'></Card>
+					<Shop></Shop>
+					<Card cardTitle='为您推荐'></Card>
+					<CommodityList></CommodityList>
+        </view>
 			</swiper-item>
 		</swiper>
 
@@ -65,9 +73,13 @@
 		data() {
 			return {
       //选中的索引
-      topBarIndex:0,
-      scrollIntoIndex:'top0',
-			topBar:[
+				topBarIndex:0,
+				//顶栏跟随的索引id值
+				scrollIntoIndex:'top0',
+				//内容块的高度值
+				clentHeight:0,
+				//顶栏数据
+				topBar:[
 					{name:'推荐'},
 					{name:'运动户外'},
 					{name:'服饰内衣'},
@@ -90,6 +102,12 @@
     },
 		onLoad() {
 
+		},
+    onReady() {
+			let view = uni.createSelectorQuery().select(".home-data");
+			view.boundingClientRect(data => {
+			    this.clentHeight = data.height;
+			}).exec();
 		},
 		methods:{
 			changeTab(index){
