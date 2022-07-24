@@ -2,12 +2,33 @@
  * @Description: 
  * @Author: lijiapeng
  * @Date: 2022-05-30 21:31:48
- * @LastEditTime: 2022-07-02 18:30:06
+ * @LastEditTime: 2022-07-24 16:09:30
  * @LastEditors: lijiapeng
  * @Reference: 
 -->
 <template>
 	<view class='index'>
+    <scroll-view scroll-x="true" class='scroll-content'>
+			<view
+				class='scroll-item'
+				v-for='(item,index) in topBar'
+				:key='index'
+				@tap='changeTab(index)'
+			>
+				<text :class='topBarIndex===index? "f-active-color" : "f-color"'>{{item.name}}</text>
+			</view>
+		</scroll-view>
+
+    <swiper  @change='onChangeTab' :current="topBarIndex">
+			<swiper-item 
+				v-for='(item,index) in topBar'
+				:key='index'
+			>
+				<view>{{item.name}}</view>
+			</swiper-item>
+		</swiper>
+
+
     <IndexSwiper></IndexSwiper>
     <Recommend></Recommend>
     <Card cardTitle="猜你喜欢"></Card>
@@ -41,7 +62,17 @@
 	export default {
 		data() {
 			return {
-			
+      //选中的索引
+      topBarIndex:0,
+			topBar:[
+					{name:'推荐'},
+					{name:'运动户外'},
+					{name:'服饰内衣'},
+					{name:'鞋靴箱包'},
+					{name:'美妆个护'},
+					{name:'家居数码'},
+					{name:'食品母婴'}
+				]
 			}
 		},
     components:{
@@ -57,8 +88,16 @@
 		onLoad() {
 
 		},
-		methods: {
-
+		methods:{
+			changeTab(index){
+				if(this.topBarIndex === index){
+					return ;
+				}
+				this.topBarIndex = index;
+			},
+			onChangeTab(e){
+				this.changeTab(e.detail.current);
+			}
 		}
 	}
 </script>
@@ -72,5 +111,19 @@
 	/* display: flex; */
 	/* justify-content: space-between; */
 	/* align-items: center; */
+}
+.scroll-content{
+	width: 100%;
+	height: 80rpx;
+	white-space: nowrap;
+}
+.scroll-item{
+	display: inline-block;
+	padding:10rpx 30rpx;
+	font-size:32rpx;
+}
+.f-active-color{
+	padding:10rpx 0;
+	border-bottom: 6rpx solid #49BDFB;
 }
 </style>
