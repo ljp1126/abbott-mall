@@ -26,25 +26,22 @@
 				:key='index'
 			>
 				<view class='home-data'>
-          <Banner></Banner>
-					<Icons></Icons>
-					<Card cardTitle='热销爆品'></Card>
-					<Hot></Hot>
-					<Card cardTitle='推荐店铺'></Card>
-					<Shop></Shop>
-					<Card cardTitle='为您推荐'></Card>
+          <IndexSwiper></IndexSwiper>
+					<Recommend></Recommend>
+					<Card cardTitle='猜你喜欢'></Card>
 					<CommodityList></CommodityList>
         </view>
 			</swiper-item>
 		</swiper>
 
 
-    <IndexSwiper></IndexSwiper>
+    <!-- <IndexSwiper></IndexSwiper>
     <Recommend></Recommend>
     <Card cardTitle="猜你喜欢"></Card>
-    <CommodityList></CommodityList>
+    <CommodityList></CommodityList> -->
+
     
-    <Card cardTitle='热销爆品'></Card>
+    <!-- <Card cardTitle='热销爆品'></Card>
     		
     <Hot></Hot>
 
@@ -55,7 +52,7 @@
     <Card cardTitle='为你推荐'></Card>
     
     <Banner></Banner>
-    <Icons></Icons>
+    <Icons></Icons> -->
 	</view>
 </template>
 
@@ -101,7 +98,12 @@
       Shop
     },
 		onLoad() {
-
+      uni.request({
+				url:"http://192.168.100.7:3000/api/index_list/data",
+				success: (res) => {
+					console.log(res.data.a);
+				}
+			})
 		},
     onReady() {
 			let view = uni.createSelectorQuery().select(".home-data");
