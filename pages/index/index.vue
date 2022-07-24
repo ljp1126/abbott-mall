@@ -2,24 +2,26 @@
  * @Description: 
  * @Author: lijiapeng
  * @Date: 2022-05-30 21:31:48
- * @LastEditTime: 2022-07-24 16:09:30
+ * @LastEditTime: 2022-07-24 16:16:24
  * @LastEditors: lijiapeng
  * @Reference: 
 -->
 <template>
 	<view class='index'>
-    <scroll-view scroll-x="true" class='scroll-content'>
+    <scroll-view scroll-x="true" class='scroll-content' :scroll-into-view='scrollIntoIndex'>
 			<view
+				:id="'top'+index"
 				class='scroll-item'
 				v-for='(item,index) in topBar'
 				:key='index'
 				@tap='changeTab(index)'
 			>
-				<text :class='topBarIndex===index? "f-active-color" : "f-color"'>{{item.name}}</text>
+				<text :class='topBarIndex===index? "f-active-color":"f-color"'>{{item.name}}</text>
 			</view>
 		</scroll-view>
-
-    <swiper  @change='onChangeTab' :current="topBarIndex">
+		
+		
+		<swiper  @change='onChangeTab' :current="topBarIndex">
 			<swiper-item 
 				v-for='(item,index) in topBar'
 				:key='index'
@@ -64,6 +66,7 @@
 			return {
       //选中的索引
       topBarIndex:0,
+      scrollIntoIndex:'top0',
 			topBar:[
 					{name:'推荐'},
 					{name:'运动户外'},
@@ -94,6 +97,7 @@
 					return ;
 				}
 				this.topBarIndex = index;
+				this.scrollIntoIndex = 'top'+index;
 			},
 			onChangeTab(e){
 				this.changeTab(e.detail.current);
