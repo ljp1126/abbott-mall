@@ -1,11 +1,3 @@
-<!--
- * @Description: 
- * @Author: lijiapeng
- * @Date: 2022-06-12 13:54:40
- * @LastEditTime: 2022-07-02 18:17:05
- * @LastEditors: lijiapeng
- * @Reference: 
--->
 <template>
 	<view class='commodity' :style="'flex-wrap:' +wrap+';'">
 		<!-- 单个商品组件 -->
