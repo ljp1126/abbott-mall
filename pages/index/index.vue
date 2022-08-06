@@ -21,14 +21,12 @@
 			>
 				<view class='home-data'>
 					<block v-for='(k,i) in item.data' :key='i'>
-						
 						<IndexSwiper v-if='k.type==="swiperList"' :dataList='k.data'></IndexSwiper>
 						<template v-if='k.type==="recommendList"' >
 							<Recommend :dataList='k.data'></Recommend>
 							<Card cardTitle='猜你喜欢'></Card>
 						</template>
 						<CommodityList v-if='k.type==="commodityList"' :dataList='k.data'></CommodityList>
-						
 					</block>
 				</view>
 			</swiper-item>
@@ -40,6 +38,7 @@
 		<Card cardTitle='猜你喜欢'></Card>
 		<CommodityList></CommodityList> -->
 		
+    
 		<!-- 其他模版：运动户外、美妆... -->
 		<!-- <Banner></Banner>
 		<Icons></Icons>
