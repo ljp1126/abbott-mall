@@ -1,6 +1,5 @@
 <template>
 	<view class='index'>
-		
 		<scroll-view scroll-x="true" class='scroll-content' :scroll-into-view='scrollIntoIndex'>
 			<view
 				:id="'top'+index"
@@ -12,7 +11,6 @@
 				<text :class='topBarIndex===index? "f-active-color" : "f-color"'>{{item.name}}</text>
 			</view>
 		</scroll-view>
-		
 		 
 		<swiper  @change='onChangeTab' :current="topBarIndex" :style="'height:'+clentHeight+'px;'">
 			<swiper-item 
@@ -38,7 +36,7 @@
 		<Card cardTitle='猜你喜欢'></Card>
 		<CommodityList></CommodityList> -->
 		
-    
+
 		<!-- 其他模版：运动户外、美妆... -->
 		<!-- <Banner></Banner>
 		<Icons></Icons>

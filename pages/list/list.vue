@@ -3,7 +3,6 @@
 		分类
 	</view>
 </template>
-
 <script>
 	export default {
 		data() {
@@ -11,9 +10,7 @@
 				
 			}
 		},
-		methods: {
-			
-		}
+		methods: {}
 	}
 </script>
 
