@@ -35,7 +35,6 @@
 		<Recommend></Recommend>
 		<Card cardTitle='猜你喜欢'></Card>
 		<CommodityList></CommodityList> -->
-		
 
 		<!-- 其他模版：运动户外、美妆... -->
 		<!-- <Banner></Banner>
